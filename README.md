@@ -1,9 +1,8 @@
 MT5 Diebold-Mariano Test Analyzer
-
 Overview
 This Python script analyses MetaTrader 5 (MT5) Strategy Tester HTML reports and performs the Diebold-Mariano statistical test to compare the forecasting accuracy of a trading strategy against a benchmark.
-Features
 
+Features
 •	Parses MT5 HTML backtest reports to extract trade data
 •	Calculates returns from the equity curve
 •	Performs Diebold-Mariano test for predictive accuracy comparison
@@ -28,7 +27,6 @@ Input Files
 o	CSV file with pre-calculated returns data
 o	Another MT5 HTML report for comparison
 o	Raw MT5 price data CSV (OHLC format)
-
 
 Usage
 Command Line Interface
@@ -58,12 +56,14 @@ o	Yes: Select either CSV file (returns or raw prices) or another HTML report
 o	No: Uses risk-free rate (2% annualized) as benchmark
 4.	Specify forecast horizon (default: 1)
 5.	View results in console and pop-up window
+6.	
 Acceptable Input Formats
 MT5 HTML Reports
 •	Standard MT5 Strategy Tester HTML output
 •	Must contain a "Deals" table with trade information
 •	Should include columns: Time, Deal, Profit, Balance
 •	Supports various encodings (UTF-16, UTF-8, CP1252, etc.)
+
 Benchmark CSV Files - Two Types Supported:
 1. Pre-calculated Returns
 •	Should contain a column with return data
@@ -74,12 +74,12 @@ Benchmark CSV Files - Two Types Supported:
 •	CSV file exported directly from MT5
 •	Should contain columns: Date, Time, Open, High, Low, Close, Volume
 •	The script will automatically calculate daily returns from Close prices
-
-Example format:
+•	Example format:
+text
 Date,Time,Open,High,Low,Close,Volume
 2023.01.01,00:00,1.10000,1.10500,1.09900,1.10200,100000
 2023.01.02,00:00,1.10200,1.10800,1.10100,1.10600,120000
-
+   
 Output Interpretation
 The Diebold-Mariano test results include:
 •	DM Statistic: Negative values favor the strategy, positive values favor the benchmark
@@ -97,10 +97,9 @@ The script now includes functionality to handle raw MT5 price data CSV files. Wh
 2.	Extracts closing prices
 3.	Calculates daily percentage returns
 4.	Aligns these returns with the strategy's trading timeline
-
+   
 This allows for direct comparison between your strategy's performance and the underlying asset's price movements.
 Notes
-
 •	The script handles various MT5 HTML formatting issues and encoding problems
 •	Minimum of 2 trades required for returns calculation
 •	For the DM test, at least horizon + 1 observations are needed
@@ -113,7 +112,7 @@ Troubleshooting
 3.	Encoding errors: The script tries multiple encodings automatically
 4.	GUI not available: Use command-line arguments instead
 5.	Price data alignment issues: Ensure your price CSV covers the same period as your backtest
-
+   
 Author
 Richard, BLACK BOX LABS - 2025
 
