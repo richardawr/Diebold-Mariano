@@ -1,4 +1,4 @@
-MT5 Diebold-Mariano Test Analyzer
+**MT5 Diebold-Mariano Test Analyzer
 Overview
 This Python script analyses MetaTrader 5 (MT5) Strategy Tester HTML reports and performs the Diebold-Mariano statistical test to compare the forecasting accuracy of a trading strategy against a benchmark.
 
@@ -119,3 +119,4 @@ Richard, BLACK BOX LABS - 2025
 Disclaimer
 This tool is for educational and research purposes only. Past performance does not guarantee future results. Always validate trading strategies with multiple statistical tests and consider transaction costs, slippage, and other real-world factors.
 
+**
